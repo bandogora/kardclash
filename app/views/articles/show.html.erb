@@ -1,5 +1,6 @@
 <h1>Showing new article</h1>
 
+<%= link_to "Edit this article", edit_article_path(@article) %>
 <p>
   Title: <%= @article.title %>
 </p>
@@ -7,3 +8,5 @@
 <p>
   Description: <%= @article.description %>
 </p>
+
+<%= link_to "Back to articles", articles_path %>
