@@ -17,6 +17,10 @@ $navbar-default-bg: black;
   text-decoration: none;
 }
 
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: whitesmoke;
+}
+
 .center {
   text-align: center;
 }
@@ -32,7 +36,7 @@ $navbar-default-bg: black;
 }
 
 .btn-xlg:hover {
-  background-color: darkslategray;
+  background-color: dimgray;
 }
 
 .btn-search:focus {
@@ -44,7 +48,7 @@ $navbar-default-bg: black;
 }
 
 footer {
-  matgin-top: 45px;
+  margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
