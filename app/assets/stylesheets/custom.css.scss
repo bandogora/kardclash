@@ -40,11 +40,26 @@ $navbar-default-bg: black;
 }
 
 .btn-search:focus {
-  outline-color: #B00100;
+  outline-color: #B00100 !important;
 }
 
-.btn-search:active {
-  outline-color: #B00100;
+.btn-primary {
+  background-color: black;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: dimgrey;
+  border: none;
+}
+
+.article-actions {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+}
+
+.description {
+  margin-top: 0;
 }
 
 footer {
