@@ -34,7 +34,8 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    flash[:danger] = 'Article successfully deleted.'
+    undo_link = view_context.link_to('undo', revert_version_path(@product.versions.last), method: :post)
+    flash[:danger] = "Article successfully deleted. #{undo_link}"
     redirect_to articles_path
   end
 
