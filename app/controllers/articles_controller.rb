@@ -22,19 +22,30 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    if @article.update(article_params)
-      flash[:success] = 'Article has been updated'
-      redirect_to article_path(@article)
+    @article.assign_attributes(article_params)
+    if @article.changed?
+      if @article.save
+        undo_link = view_context
+                    .link_to('undo',
+                             revert_version_path(@article.versions.last),
+                             method: :post)
+        flash[:success] = "Article has been updated. #{undo_link}"
+        redirect_to article_path(@article)
+      else
+        render :edit
+      end
     else
-      render :edit
+      flash[:warning] = 'No changes made to article.'
+      redirect_to article_path(@article)
     end
   end
 
-  def show; end
-
   def destroy
     @article.destroy
-    undo_link = view_context.link_to('undo', revert_version_path(@product.versions.last), method: :post)
+    undo_link = view_context
+                .link_to('undo',
+                         revert_version_path(@article.versions.last),
+                         method: :post)
     flash[:danger] = "Article successfully deleted. #{undo_link}"
     redirect_to articles_path
   end
