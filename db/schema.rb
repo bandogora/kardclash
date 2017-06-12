@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_170_518_173_329) do
+ActiveRecord::Schema.define(version: 20_170_610_003_231) do
   create_table 'articles', force: :cascade do |t|
     t.string 'title'
     t.text 'description'
     t.datetime 'create_at'
     t.datetime 'updated_at'
+  end
+
+  create_table 'versions', force: :cascade do |t|
+    t.string 'item_type', null: false
+    t.integer 'item_id', null: false
+    t.string 'event', null: false
+    t.string 'whodunnit'
+    t.text 'object', limit: 1_073_741_823
+    t.datetime 'created_at'
+    t.index %w[item_type item_id], name: 'index_versions_on_item_type_and_item_id'
   end
 end
