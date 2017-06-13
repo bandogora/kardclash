@@ -1,0 +1,12 @@
+AllCops:
+  Exclude:
+  - db/**/*.rb
+  - test/**/*.rb
+  - bin/**/*.rb
+  - config/**/*.rb
+  - script/**/*.rb
+  - vendor/**/*.rb
+  - Rakefile
+
+Documentation:
+  Enabled: False
