@@ -1,12 +1,9 @@
-$navbar-default-bg: black;
-
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import "bootstrap/dist/css/bootstrap";
 
 #logo {
   float: left;
   font-size: 1.7em;
-  color: white;
+  color: #FFFFFF;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
@@ -17,8 +14,15 @@ $navbar-default-bg: black;
   text-decoration: none;
 }
 
+.gradient {
+  background: -webkit-linear-gradient(bottom, #00FFFF, #000080); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, #00FFFF, #000080); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, #00FFFF, #000080); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, #00FFFF, #000080); /* Standard syntax (must be last) */
+}
+
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: whitesmoke;
+  opacity: 0.9;
 }
 
 .center {
@@ -26,9 +30,10 @@ $navbar-default-bg: black;
 }
 
 .jumbotron {
-  background-image: asset_url('rails.jpeg');
+  background-image: asset_url('fox.jpeg');
   background-size: cover;
-  height: 550px;
+  height: 575px;
+  color: #FFFFFF;
 }
 .btn-xlg {
   background-color: black;
@@ -37,10 +42,6 @@ $navbar-default-bg: black;
 
 .btn-xlg:hover {
   background-color: dimgray;
-}
-
-.btn-search:focus {
-  outline-color: #B00100 !important;
 }
 
 .btn-primary {
@@ -68,7 +69,7 @@ $navbar-default-bg: black;
 }
 
 .article-body {
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #EAEAEA;
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -78,16 +79,28 @@ $navbar-default-bg: black;
   padding-left: 0;
 }
 
+.well {
+  background-color: #C3C3C3;
+  border-color: #323232;
+}
+
+a {
+  color: #B00100;
+}
+
 h1 {
   margin-top: 0;
 }
 
+body, html {
+  min-height: 100%;
+}
+
 footer {
-  margin-top: 45px;
+  margin-top: 40px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-  text-decoration: none;
+  border-top: 1px solid #C3C3C3;
+  color: #A0A0A0;
 }
 
 footer ul {
@@ -99,3 +112,13 @@ footer ul li {
   float: left;
   margin-left: 15px;
 }
+
+btn-row ul{
+  list-style: none;
+}
+
+btn-row ul li {
+  float: left;
+  margin-left: 15px;
+}
+

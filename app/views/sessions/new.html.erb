@@ -21,14 +21,16 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <%= f.submit 'Login', class: 'btn btn-primary btn-md' %>
-      </div>
-    </div>
+    <btn-row>
+      <ul class="col-sm-offset-2 col-sm-10">
+        <li>
+          <%= f.submit 'Login', class: 'btn btn-primary btn-md' %>
+        </li>
 
-    <div class="col-xs-4 col-sm-offset-2">
-      [ <%= link_to 'Cancel', articles_path %> ]
-    </div>
+        <li>
+          [ <%= link_to 'Cancel', :back %> ]
+        </li>
+      </ul>
+    </btn-row>
 
 <% end %>
