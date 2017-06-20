@@ -6,7 +6,7 @@
     <%= form_for(@article, html: {class: 'form-horizontal', role: 'form'}) do |f| %>
 
         <div class="form-group">
-          <div class="control-label col-xs-2">
+          <div class="control-label col-xs-2 title">
             <%= f.label :title %>
           </div>
           <div class="col-sm-6">
@@ -15,7 +15,7 @@
         </div>
 
         <div class="form-group">
-          <div class="control-label col-xs-2">
+          <div class="control-label col-xs-2 title">
             <%= f.label :description %>
           </div>
           <div class="col-sm-6">

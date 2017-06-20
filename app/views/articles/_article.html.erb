@@ -13,10 +13,12 @@
                 last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
             </div>
           </div>
-          <div class="article-actions">
-            <%= link_to 'Edit article', edit_article_path(article), class: 'btn btn-xs btn-primary' %>
-            [ <%= link_to 'Delete', article_path(article), method: :delete %> ]
-          </div>
+          <% if logged_in? && current_user == article.user%>
+            <div class="article-actions">
+              <%= link_to 'Edit article', edit_article_path(article), class: 'btn btn-xs btn-primary' %>
+              [ <%= link_to 'Delete', article_path(article), method: :delete %> ]
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

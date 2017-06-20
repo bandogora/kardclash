@@ -2,6 +2,7 @@
 
 #logo {
   float: left;
+  font-family: Atomic Age, cursive;
   font-size: 1.7em;
   color: #FFFFFF;
   text-transform: uppercase;
@@ -14,11 +15,15 @@
   text-decoration: none;
 }
 
+#background {
+  background-color: #004664;
+}
+
 .gradient {
-  background: -webkit-linear-gradient(bottom, #00FFFF, #000080); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom, #00FFFF, #000080); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom, #00FFFF, #000080); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom, #00FFFF, #000080); /* Standard syntax (must be last) */
+  background: -webkit-linear-gradient(bottom, #00FFFF, #000000); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, #00FFFF, #000000); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, #00FFFF, #000000); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, #00FFFF, #000000); /* Standard syntax (must be last) */
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -84,12 +89,17 @@
   border-color: #323232;
 }
 
-a {
-  color: #B00100;
+.title {
+  color: #C3C3C3;
 }
 
 h1 {
   margin-top: 0;
+  color: #C3C3C3;
+}
+
+h2, p {
+  color: #C3C3C3;
 }
 
 body, html {

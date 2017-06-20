@@ -12,9 +12,8 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user
-    if !logged_in?
-      flash[:danger] = 'You must be logged in'
-      redirect_back(fallback_location: root_path)
-    end
+    return if logged_in?
+    flash[:danger] = 'You must be logged in'
+    redirect_back(fallback_location: root_path)
   end
 end

@@ -1,12 +1,17 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[edit update show]
+  before_action :require_same_user, only: %i[edit update]
 
   def index
-    @users = User.paginate(page: params[:page], per_page: 5)
+    @users = User.paginate(page: params[:page], per_page: 10)
   end
 
   def new
-    @user = User.new
+    if logged_in?
+      redirect_to root_path
+    else
+      @user = User.new
+    end
   end
 
   def create
@@ -36,5 +41,15 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def require_same_user
+    return unless current_user != @user
+    flash[:danger] = "You can't mess with other users!"
+    redirect_to root_path
   end
 end
