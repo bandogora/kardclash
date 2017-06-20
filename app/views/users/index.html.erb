@@ -10,7 +10,7 @@
           <li class="article-title">
             <%= link_to user.username, user_path(user) %>
           </li>
-          <li><small><%= pluralize(user.articles.count, 'article') if user.articles %></small></li>
+          <li><small><%= pluralize(user.articles.count, 'post') if user.articles %></small></li>
         </div>
       </div>
     </ul>
