@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[edit update show]
   before_action :require_same_user, only: %i[edit update]
+  before_action :require_admin, only: :destroy
 
   def index
     @users = User.paginate(page: params[:page], per_page: 10)
@@ -38,6 +39,17 @@ class UsersController < ApplicationController
     @user_articles = @user.articles.paginate(page: params[:page], per_page: 5)
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    undo_link = view_context
+                    .link_to('undo',
+                             revert_version_path(@user.versions.last),
+                             method: :post)
+    flash[:danger] = "User destroyed. #{undo_link}"
+    redirect_to users_path
+  end
+
   private
 
   def user_params
@@ -49,8 +61,14 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    return unless current_user != @user
+    return unless current_user != @user && !current_user.admin?
     flash[:danger] = "You can't mess with other users!"
+    redirect_to root_path
+  end
+
+  def require_admin
+    return unless logged_in? && !current_user.admin?
+    flash[:danger] = 'Only admins are allowed to do this.'
     redirect_to root_path
   end
 end

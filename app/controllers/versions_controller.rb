@@ -7,6 +7,6 @@ class VersionsController < ApplicationController
       @version.item.destroy
     end
     redirect_back(fallback_location: article_path)
-    flash[:success] = 'Changes successfully reverted.'
+    flash[:success] = 'Changes reverted.'
   end
 end
