@@ -29,23 +29,24 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       flash[:success] = 'Account updated'
-      redirect_to articles_path
+      redirect_to declarations_path
     else
       render 'edit'
     end
   end
 
   def show
-    @user_articles = @user.articles.paginate(page: params[:page], per_page: 5)
+    @user_declarations = @user.declarations.paginate(page: params[:page],
+                                                     per_page: 10)
   end
 
   def destroy
     @user = User.find(params[:id])
     @user.destroy
     undo_link = view_context
-                    .link_to('undo',
-                             revert_version_path(@user.versions.last),
-                             method: :post)
+                .link_to('undo',
+                         revert_version_path(@user.versions.last),
+                         method: :post)
     flash[:danger] = "User destroyed. #{undo_link}"
     redirect_to users_path
   end

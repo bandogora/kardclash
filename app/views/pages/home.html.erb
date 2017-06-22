@@ -3,7 +3,7 @@
     <h1>Welcome In!</h1>
     <p>We'll pretend you're not procrastinating.</p>
     <% if logged_in? %>
-        <%= link_to 'Make a post', new_article_path, class: 'btn btn-primary btn-lg btn-xlg'  %>
+        <%= link_to 'Add to the archives', new_declaration_path, class: 'btn btn-primary btn-lg btn-xlg'  %>
     <% else %>
         <%= link_to 'Join us', 'signup', class: 'btn btn-primary btn-lg btn-xlg' %>
     <% end %>

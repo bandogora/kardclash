@@ -1,0 +1,31 @@
+<h2 class="col-xs-offset-2 title"><%= @declaration.title %></h2>
+
+<div class="well col-xs-6 col-xs-offset-2">
+  <% if @declaration.user %>
+    <ul class="listing">
+      <div class="row center">
+        <div class="col-md-4 col-md-offset-4">
+          <li>Created by</li>
+          <li><%= link_to gravatar_for(@declaration.user, 80), user_path(@declaration.user) %></li>
+          <li class="article-title">
+            <%= link_to @declaration.user.username, user_path(@declaration.user) %>
+          </li>
+          <li><small><%= pluralize(@declaration.user.declarations.count, 'Declaration') if @declaration.user.declarations %>
+          </small></li>
+        </div>
+      </div>
+    </ul>
+  <% end %>
+  <hr>
+  <%= simple_format(@declaration.description) %>
+
+  <div class="article-actions">
+    <% if logged_in? && (current_user == @declaration.user || current_user.admin?) %>
+    <%= link_to 'Edit this declaration', edit_declaration_path(@declaration), class: 'btn btn-xs btn-primary' %>
+    <% end %>
+    <%= link_to 'Back to archive', declarations_path, class: 'btn btn-xs btn-primary' %>
+    <% if logged_in? && (current_user == @declaration.user || current_user.admin?) %>
+    | [ <%= link_to 'Delete', declaration_path(@declaration), method: :delete %> ]
+    <% end %>
+  </div>
+</div>

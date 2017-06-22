@@ -1,4 +1,4 @@
-class Article < ApplicationRecord
+class Declaration < ApplicationRecord
   belongs_to :user
   has_paper_trail
   validates :title, presence: true, length: { minimum: 3, maximum: 50 }

@@ -17,12 +17,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'Users', users_path %></li>
-        <li><%= link_to 'Posts', articles_path %></li>
-        <% if logged_in? %>
-          <li><%= link_to 'Your profile', user_path(current_user) %></li>
-        <% else %>
-            <li><%= link_to 'Something', '#' %></li>
-        <% end %>
+        <li><%= link_to 'Archives', declarations_path %></li>
+        <li><%= link_to 'Market', '#' %></li>
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">
@@ -42,7 +38,7 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to 'Create new post', new_article_path %></li>
+            <li><%= link_to 'Create new declaration', new_declaration_path %></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to 'Edit profile', edit_user_path(current_user) %></li>
           </ul>

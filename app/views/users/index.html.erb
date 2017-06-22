@@ -10,7 +10,7 @@
           <li class="article-title">
             <%= link_to user.username, user_path(user) %>
           </li>
-          <li><small><%= pluralize(user.articles.count, 'post') if user.articles %></small></li>
+          <li><small><%= pluralize(user.declarations.count, 'Declaration') if user.declarations %></small></li>
           <% if logged_in? && current_user.admin? %>
           <li><%= link_to 'Delete user', user_path(user), method: :delete %></li>
           <% end %>

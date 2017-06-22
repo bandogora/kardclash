@@ -6,12 +6,12 @@
   </div>
 </div>
 
-<h4 class="center title"><%= @user.username %>'s posts</h4>
+<h4 class="center title"><%= @user.username %>'s declarations</h4>
 
 <div align="center">
-  <%= will_paginate @user_articles %>
+  <%= will_paginate @user_declarations %>
 </div>
-<%= render 'articles/article', obj: @user_articles %>
+<%= render 'declarations/declaration', obj: @user_declarations %>
 <div align="center">
-  <%= will_paginate @user_articles %>
+  <%= will_paginate @user_declarations %>
 </div>
