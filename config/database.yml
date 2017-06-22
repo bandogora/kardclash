@@ -5,8 +5,8 @@ default: &default
 
 development:
   <<: *default
-  database: alpha-blog_development
+  database: kardclash_development
 
 test:
   <<: *default
-  database: alpha-blog_test
+  database: kardclash_test
