@@ -1,6 +1,8 @@
+<%= render 'shared/error', obj: @declaration %>
+
 <h2 class="col-xs-offset-2 title"><%= @declaration.title %></h2>
 
-<div class="well col-xs-6 col-xs-offset-2">
+<div class="center well col-xs-8 col-xs-offset-2">
   <% if @declaration.user %>
     <ul class="listing">
       <div class="row center">
@@ -19,7 +21,7 @@
   <hr>
   <%= simple_format(@declaration.description) %>
 
-  <div class="article-actions">
+  <div class="center article-actions">
     <% if logged_in? && (current_user == @declaration.user || current_user.admin?) %>
     <%= link_to 'Edit this declaration', edit_declaration_path(@declaration), class: 'btn btn-xs btn-primary' %>
     <% end %>
@@ -28,4 +30,9 @@
     | [ <%= link_to 'Delete', declaration_path(@declaration), method: :delete %> ]
     <% end %>
   </div>
+  <hr>
+
+  <%= render 'new_comment' %>
+  <%= render 'comments' %>
+
 </div>

@@ -15,7 +15,7 @@ class DeclarationsController < ApplicationController
     @declaration = Declaration.new(declaration_params)
     @declaration.user = current_user
     if @declaration.save
-      flash[:success] = 'Post successfully created'
+      flash[:success] = 'Declaration successfully created'
       redirect_to declaration_path(@declaration)
     else
       render :new
@@ -30,13 +30,13 @@ class DeclarationsController < ApplicationController
                     .link_to('undo',
                              revert_version_path(@declaration.versions.last),
                              method: :post)
-        flash[:success] = "Post has been updated. #{undo_link}"
+        flash[:success] = "Declaration updated. #{undo_link}"
         redirect_to declaration_path(@declaration)
       else
         render :edit
       end
     else
-      flash[:warning] = 'No changes made to post.'
+      flash[:warning] = 'No changes made to declaration.'
       redirect_to declaration_path(@declaration)
     end
   end
@@ -47,7 +47,7 @@ class DeclarationsController < ApplicationController
                 .link_to('undo',
                          revert_version_path(@declaration.versions.last),
                          method: :post)
-    flash[:danger] = "Post successfully deleted. #{undo_link}"
+    flash[:danger] = "Declaration deleted. #{undo_link}"
     redirect_to declarations_path
   end
 
@@ -63,7 +63,7 @@ class DeclarationsController < ApplicationController
 
   def require_same_user
     return unless current_user != @declaration.user && !current_user.admin?
-    flash[:danger] = "You can't mess with other user's posts!"
+    flash[:danger] = "You can't mess with other user's declarations!"
     redirect_to root_path
   end
 end

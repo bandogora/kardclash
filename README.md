@@ -1,1 +1,1 @@
-This is the repository for the alpha-blog app.
+A work in progress forum webapp for card and board games.
