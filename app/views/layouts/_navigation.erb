@@ -1,10 +1,11 @@
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Atomic+Age" />
 
-<nav class="navbar navbar-inverse">
+
+<nav class="navbar navbar-inverse transparent-border">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed"
+      <button type="button" class="navbar-toggle collapsed transparent-border"
               data-toggle="collapse"
               data-target="#bs-example-navbar-collapse-1"
               aria-expanded="false">
@@ -24,10 +25,21 @@
         <li><%= link_to 'Market', '#' %></li>
       </ul>
       <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Type in me!">
-        </div>
-        <button type="submit" class="btn btn-default btn-search">Submit</button>
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="input-group">
+              <%= form_tag(declarations_path, method: 'get', id: 'search-form') do %>
+                  <%= text_field_tag :search, params[:search], placeholder: 'Search',
+                                     class: 'form-control transparent-border grey-back' %>
+                  <span class="input-group-btn">
+                    <%= button_tag(type: 'submit', class: 'btn btn-submit transparent-border grey-back') do %>
+                      <span class="glyphicon glyphicon-search"></span>
+                    <% end %>
+                  </span>
+              <% end %>
+            </div><!-- /input-group -->
+          </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
@@ -45,6 +57,7 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
+            <li><%= link_to 'My profile', user_path(current_user) %></li>
             <li><%= link_to 'Create new declaration', new_declaration_path %></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to 'Edit profile', edit_user_path(current_user) %></li>

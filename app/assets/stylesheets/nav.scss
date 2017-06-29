@@ -1,0 +1,19 @@
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  opacity: 0.9;
+}
+
+.transparent-border {
+  border-color: transparent;
+  border-radius: 0;
+}
+
+.grey-back, .grey-back-no-hv {
+  background-color: #333;
+  box-shadow: none;
+  color: #FFFFFF;
+}
+
+.grey-back:hover {
+  background-color: #3A3A3A;
+  color: #00FFFF;
+}

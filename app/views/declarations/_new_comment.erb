@@ -3,12 +3,7 @@
 <%= form_for(Comment.new, html: {class: 'form-horizontal', role: 'form'}) do |f| %>
     <%= f.hidden_field :declaration_id, value: @declaration.id %>
 
-  <div class="form-group">
-    <div class="control-label col-xs-2 title">
-      <%= f.label :text %>
-    </div>
-
-    <div class="col-sm-8">
+    <div class="col-sm-8 col-sm-offset-2">
       <%= f.text_area :text, rows: 4, class: 'form-control', placeholder: 'Reply' %>
     </div>
 
