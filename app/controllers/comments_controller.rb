@@ -14,9 +14,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.user = @current_user
-    if @comment.save
-      flash[:success] = 'Reply created'
-    end
+    flash[:success] = 'Reply created' if @comment.save
     redirect_back(fallback_location: declarations_path)
   end
 

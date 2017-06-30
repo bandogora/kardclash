@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def new
     session[:return_to] ||= request.referer
   end
@@ -21,5 +20,4 @@ class SessionsController < ApplicationController
     flash[:success] = "You're logged out."
     redirect_back(fallback_location: root_path)
   end
-
 end
