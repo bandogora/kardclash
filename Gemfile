@@ -7,6 +7,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'bcrypt'
+gem 'bootstrap-sass', '~> 3.3'
 gem 'bootstrap-will_paginate'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
