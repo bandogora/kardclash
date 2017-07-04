@@ -1,0 +1,38 @@
+<% provide(:page_id, 'Archives') %>
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail">
+      <%= link_to image_tag(asset_path('MTG.jpg')),
+                  declarations_path,
+                  class: 'img-responsive' %>
+      <h4>Card Games</h4>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail">
+      <%= link_to image_tag(asset_path('boardgame.png')),
+                  declarations_path,
+                  class: 'img-responsive' %>
+      <h4>Board Games</h4>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail">
+      <%= link_to image_tag(asset_path('blizzard.jpg')),
+                  declarations_path,
+                  class: 'img-responsive' %>
+      <h4>Other Games</h4>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail">
+      <%= link_to image_tag(asset_path('search.jpg')),
+                  declarations_path,
+                  class: 'img-responsive' %>
+      <h4>Browse All</h4>
+    </div>
+  </div>
+</div>

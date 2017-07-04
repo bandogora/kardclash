@@ -67,6 +67,19 @@
   border-color: #323232;
 }
 
+.thumbnail {
+  border-radius: 0;
+  text-align: center;
+  background-color: #333;
+  color: #FFFFFF;
+  border-color: #3A3A3A;
+  padding: 0;
+}
+
+.thumbnail:hover {
+  border-color: #00FFFF;
+}
+
 .title {
   color: #C3C3C3;
 }

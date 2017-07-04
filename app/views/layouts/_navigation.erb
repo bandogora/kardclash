@@ -21,8 +21,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'Users', users_path %></li>
-        <li><%= link_to 'Archives', declarations_path %></li>
-        <li><%= link_to 'Market', '#' %></li>
+        <li><%= link_to 'Archives', archives_path %></li>
+        <li><%= link_to 'Market', market_path %></li>
       </ul>
       <form class="navbar-form navbar-left">
         <div class="row">
@@ -58,7 +58,9 @@
           </a>
           <ul class="dropdown-menu">
             <li><%= link_to 'My profile', user_path(current_user) %></li>
-            <li><%= link_to 'Create new declaration', new_declaration_path %></li>
+            <li><%= link_to 'My declarations', user_path(current_user) %></li>
+            <li><%= link_to 'Create a declaration', new_declaration_path %></li>
+            <li><%= link_to 'Make a listing' %></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to 'Edit profile', edit_user_path(current_user) %></li>
           </ul>

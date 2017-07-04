@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'about', to: 'pages#about'
   get 'feedback', to: 'pages#feedback'
+  get 'archives', to: 'pages#archives'
+  get 'market', to: 'pages#market'
   resources :declarations
   get 'signup', to: 'users#new'
   resources :users, except: [:new]

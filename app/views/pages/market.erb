@@ -1,0 +1,20 @@
+<% provide(:page_id, 'Market') %>
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail">
+      <%= link_to image_tag(asset_path('money.png')),
+                  declarations_path,
+                  class: 'img-responsive' %>
+      <h4>Buy & Sell</h4>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail">
+      <%= link_to image_tag(asset_path('trade.JPG')),
+                  declarations_path,
+                  class: 'img-responsive' %>
+      <h4>Trade</h4>
+    </div>
+  </div>
+</div>
