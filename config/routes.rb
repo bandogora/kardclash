@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   get 'feedback', to: 'pages#feedback'
   get 'archives', to: 'pages#archives'
   get 'market', to: 'pages#market'
-  resources :declarations
+  get 'search', to: 'search#results'
   get 'signup', to: 'users#new'
-  resources :users, except: [:new]
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
+  resources :declarations
+  resources :users, except: [:new]
   resources :comments
 end

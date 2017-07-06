@@ -24,23 +24,22 @@
         <li><%= link_to 'Archives', archives_path %></li>
         <li><%= link_to 'Market', market_path %></li>
       </ul>
-      <form class="navbar-form navbar-left">
+      <div class="navbar-form navbar-left">
         <div class="row">
           <div class="col-lg-9">
-            <div class="input-group">
-              <%= form_tag(declarations_path, method: 'get', id: 'search-form') do %>
+              <%= form_tag(search_path, method: 'get', class: 'input-group') do %>
                   <%= text_field_tag :search, params[:search], placeholder: 'Search',
                                      class: 'form-control transparent-border grey-back' %>
                   <span class="input-group-btn">
-                    <%= button_tag(type: 'submit', class: 'btn btn-submit transparent-border grey-back') do %>
+                    <%= button_tag(type: 'submit', name: nil,
+                                   class: 'btn btn-submit transparent-border grey-back') do %>
                       <span class="glyphicon glyphicon-search"></span>
                     <% end %>
                   </span>
               <% end %>
-            </div><!-- /input-group -->
           </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
-      </form>
+      </div>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
         <li><%= link_to 'Logout', logout_path, method: :delete %></li>

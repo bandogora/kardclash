@@ -1,0 +1,19 @@
+<% provide(:page_id, 'Results') %>
+<h1 class="center">Inquiry Findings</h1>
+<hr>
+<% if @declarations.blank? && @users.blank? %>
+    <h4 class="center title">Sorry, you're looking in the wrong place. </h4>
+<% end %>
+<div class="center">
+  <% if @users.present? %>
+      <h4 class="center title">Users</h4>
+      <%= render 'users/user', obj: @users %>
+  <% end %>
+</div>
+
+<div class="center">
+  <% if @declarations.present? %>
+      <h4 class="center title" >Declarations</h4>
+      <%= render 'declarations/declaration', obj: @declarations %>
+  <% end %>
+</div>

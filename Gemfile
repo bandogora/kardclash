@@ -30,7 +30,7 @@ gem 'will_paginate', '~> 3.1.0'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-byebug'
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 end

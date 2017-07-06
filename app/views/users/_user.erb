@@ -1,0 +1,16 @@
+<% obj.each do |user| %>
+    <ul class="listing col-xs-4 col-xs-offset-4 width">
+      <div class="row center">
+        <div class="well">
+          <li><%= link_to gravatar_for(user, 80), user_path(user) %></li>
+          <li class="article-title">
+            <%= link_to user.username, user_path(user) %>
+          </li>
+          <li><small><%= pluralize(user.declarations.count, 'Declaration') if user.declarations %></small></li>
+          <% if logged_in? && current_user.admin? %>
+              <li><%= link_to 'Delete user', user_path(user), method: :delete %></li>
+          <% end %>
+        </div>
+      </div>
+    </ul>
+<% end %>
